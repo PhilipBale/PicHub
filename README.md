@@ -1,9 +1,8 @@
+
+PicHub  -- Anonymous Social Photography
 =======
-PicHub
-======
-
-## PicHub -- Anonymous Social Photography
-
+  
+  
 Ionic App Base
 =====================
 
