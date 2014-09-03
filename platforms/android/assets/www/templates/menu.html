@@ -1,0 +1,30 @@
+<ion-side-menus>
+	<ion-pane ion-side-menu-content>
+		<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+			<ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+		</ion-nav-bar>
+		<ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+	</ion-pane>
+	<ion-side-menu side="left">
+		<header class="bar bar-header bar-royal">
+			<h1 class="title">Menu</h1>
+		</header>
+		<ion-content class="has-header">
+			<ion-list>
+				<ion-item nav-clear menu-close href="#/app/home"> Home </ion-item>
+				<ion-item nav-clear menu-close ng-click="login()"> Settings </ion-item>
+				<div class="item item-divider">All-time Best </div>
+				<ion-item nav-clear menu-close href="#/app/home"> Global </ion-item>
+				<ion-item nav-clear menu-close href="#/app/home"> Current Area </ion-item>
+				<div class="item item-divider"> Personal Stats </div>
+				<ion-item nav-clear menu-close href="#/app/home"> Recent Buzz </ion-item>
+				<ion-item nav-clear menu-close href="#/app/home"> Top Buzz </ion-item>
+				<ion-item nav-clear menu-close href="#/app/home"> Recent Comments </ion-item>
+				<div class="item item-divider"> Other </div>
+				<ion-item nav-clear menu-close href="#/app/home"> About </ion-item>
+				<ion-item nav-clear menu-close href="#/app/home"> Contact </ion-item>
+				<ion-item nav-clear menu-close href="#/app/home"> Share Buzz </ion-item>
+			</ion-list>
+		</ion-content>
+	</ion-side-menu>
+</ion-side-menus>

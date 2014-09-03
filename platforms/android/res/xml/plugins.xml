@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugins>
+<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+<plugin name="Device" value="org.apache.cordova.Device" />
+<plugin name="File" value="org.apache.cordova.FileUtils" />
+<plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
+</plugins>

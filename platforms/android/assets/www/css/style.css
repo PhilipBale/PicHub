@@ -1,0 +1,110 @@
+/* Empty. Add your own CSS if you like */
+.img-blur {
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+.main-list .item {
+	padding: 8px 15px 5px 70px;
+}
+.main-list .item-content {
+	min-height: 0px;
+}
+.main-list .item-avatar {
+	min-height: 0px;
+	top: 0px;
+}
+.main-list .item-avatar .item-content > img:first-child,
+.item-avatar > img:first-child {
+	top: 7px;
+}
+.item-home .img {
+	top: 0px;
+	margin-top: -20px;
+	padding-top: 0px;
+}
+.item-home .row {
+	margin: 0px;
+	padding: 0px;
+}
+.item-home .col {
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+.item-home h2 {
+	margin: 0px;
+	color: #8a6de9;
+	font-family: Oswald;
+}
+.item-home .vote-buttons {
+	text-align: right;
+	margin-top: -2px;
+}
+.item-home .button-icon .icon:before, .item-home .button-icon.icon:before {
+	font-size: 26px;
+	min-height: 0px;
+	line-height: inherit;
+}
+.item-home .vote-buttons a {
+	min-height: 0px;
+	line-height: inherit;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 0px;
+	color: #8a6de9;
+}
+.item-home .views {
+	text-align: right;
+	margin-right: 3px;
+}
+.item-home .comments {
+	margin-left: 3px;
+	text-align: left;
+}
+.item-home .comments, .item-home .views {
+	margin-top: -1px;
+}
+.item-home .comments i, .item-home .views i {
+	font-size: 18px;
+	margin-top: 2px;
+	color: #8a6de9;
+}
+.item-home .vote-value {
+	margin-right: 0px;
+}
+.royal {
+	color: #8a6de9;
+}
+.image-display {
+	background-color: black;
+	width: 100% !important;
+	height: 100%;
+	top: 0 !important;
+	left: 0 !important;
+}
+.fullscreen-image {
+	background-color: black;
+	max-width: 100%;
+	max-height: 100%;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+.countdown-timer {
+	border: 2px solid;
+	border-radius: 5px;
+	background-color: black;
+	padding: 2px 6px 2px 6px;
+	color: white;
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	z-index: 21;
+}
