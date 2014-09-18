@@ -1,4 +1,6 @@
 platforms/android/ant-build/
 platforms/android/ant-gen/
 platforms/android/assets/
+platforms/android/CordovaLib/ant-build/
+platforms/android/CordovaLib/ant-gen/
 node_modules/
