@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
         var mytimeout = 0;
 
         $scope.updateItems = function() {
-            $http.jsonp('http://devserver.chandlermatz.com/getData.php?callback=JSON_CALLBACK').success(function(data) {
+            $http.jsonp('http://www.lc11.net/getData.php?callback=JSON_CALLBACK').success(function(data) {
                 $scope.items = data;
                 formatTimeDifference();
             });
@@ -61,27 +61,27 @@ angular.module('starter.controllers', [])
             for (var i in $scope.items) {
                 $scope.items[i].upload_date = prettyDate($scope.items[i].upload_date);
             }
-        } 
-		
+        }
+
         // Triggered in the login modal to close it
         $scope.closeImageDisplay = function() {
             $timeout.cancel(mytimeout);
-			$ionicNavBarDelegate.showBar(true); 
+            $ionicNavBarDelegate.showBar(true);
             $("#pic-display").hide();
-			//$("#main-content").show();
-			$("#footer").show();
+            //$("#main-content").show();
+            $("#footer").show();
         };
 
         // Open the login modal
-        $scope.showImageDisplay = function() { 
-			$ionicNavBarDelegate.showBar(false);
-			$("#footer").hide();
-			$("#pic-display").show();
+        $scope.showImageDisplay = function() {
+            $ionicNavBarDelegate.showBar(false);
+            $("#footer").hide();
+            $("#pic-display").show();
             //$scope.modal.show();
         };
 
         $scope.vote = function(id, yesVote) {
-            $http.get('http://devserver.chandlermatz.com/vote.php?direction=' + (yesVote ? 1 : 0) + '&id=' + id).finally(function() {
+            $http.get('http://www.lc11.net/vote.php?direction=' + (yesVote ? 1 : 0) + '&id=' + id).finally(function() {
                 for (var i in $scope.items) {
                     if ($scope.items[i].id == id) {
                         if (yesVote) {
@@ -93,39 +93,39 @@ angular.module('starter.controllers', [])
                 }
             });
         };
-		
+
         $scope.showImage = function(curImg, eventObj) {
 
-            $scope.imgSrc = ""; 
-			var properObj = eventObj.srcElement;
-	
-			// Super fucking hack			
-			// Go up until we get the correct tag
-			for (i = 0; i < 4; i++) {
-				if (properObj.tagName !=  "ION-ITEM") {
-					properObj = properObj.parentElement;
-				} else {
-					break;	
-				}
-			}
-			
-			console.log("Img src: " + properObj.firstElementChild.src); 
+            $scope.imgSrc = "";
+            var properObj = eventObj.srcElement;
 
-			$scope.imgSrc =  properObj.firstElementChild.src;
+            // Super fucking hack           
+            // Go up until we get the correct tag
+            for (i = 0; i < 4; i++) {
+                if (properObj.tagName != "ION-ITEM") {
+                    properObj = properObj.parentElement;
+                } else {
+                    break;
+                }
+            }
+
+            console.log("Img src: " + properObj.firstElementChild.src);
+
+            $scope.imgSrc = properObj.firstElementChild.src;
             //var testImg = $('#ourImg');
             //ImgCache.useCachedFile(testImg, curImg.image_name);
-            
-			/*if (testImg.length == 0) {
+
+            /*if (testImg.length == 0) {
                 console.log("Null test img");
             } 
-			// another section
-			
-		ImgCache.getImgPath(curImg.image_name, function(data) {
-			var testImg = $('#ourImg');
-			console.log(testImg);
-			$scope.imgSrc = data;
-			console.log($scope.imgSrc);
-		});*/
+            // another section
+            
+        ImgCache.getImgPath(curImg.image_name, function(data) {
+            var testImg = $('#ourImg');
+            console.log(testImg);
+            $scope.imgSrc = data;
+            console.log($scope.imgSrc);
+        });*/
 
             $scope.countdownTime = curImg.time_limit;
             $scope.showImageDisplay();
@@ -154,8 +154,8 @@ angular.module('starter.controllers', [])
             $scope.cameraSrc = "data:image/jpeg;base64," + data;
 
             /*$.post( "upload.php", {data: imageData}, function(data) {
-			alert("Image uploaded!");
-		}); */
+            alert("Image uploaded!");
+        }); */
             var options = new FileUploadOptions();
             options.fileKey = "file";
             options.fileName = data.substr(data.lastIndexOf('/') + 1);
@@ -176,7 +176,7 @@ angular.module('starter.controllers', [])
             options.params = params;
 
             var ft = new FileTransfer();
-            ft.upload(data, "http://devserver.chandlermatz.com/upload.php", win, fail, options);
+            ft.upload(data, "http://www.lc11.net/upload.php", win, fail, options);
         }
 
         function win(r) {
@@ -211,7 +211,7 @@ angular.module('starter.controllers', [])
             restrict: 'A',
             transclude: true,
             link: function(scope, el, attrs, transclude) {
-                var src = "http://devserver.chandlermatz.com/getImage.php?fileName=" + attrs["tsrc"];
+                var src = "http://www.lc11.net/getImage.php?fileName=" + attrs["tsrc"];
                 var sSrc = attrs["tsrc"];
 
                 ionic.Platform.ready(function() {
