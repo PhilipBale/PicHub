@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider, $compileProvider) {
     $compileProvider.imgSrcSanitizationWhitelist('filesystem');
-    /*$compileProvider.imgSrcSanitizationWhitelist('file'); 
+    $compileProvider.imgSrcSanitizationWhitelist('file'); /*
   $compileProvider.imgSrcSanitizationWhitelist('file:'); 
   $compileProvider.imgSrcSanitizationWhitelist('file:/'); 
   $compileProvider.imgSrcSanitizationWhitelist('file://'); 

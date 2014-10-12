@@ -76,6 +76,8 @@ angular.module('starter.controllers', [])
         $scope.showImageDisplay = function() {
             $ionicNavBarDelegate.showBar(false);
             $("#footer").hide();
+            var pd = $("#pic-display");
+            console.log(pd.length);
             $("#pic-display").show();
             //$scope.modal.show();
         };
@@ -98,6 +100,7 @@ angular.module('starter.controllers', [])
 
             $scope.imgSrc = "";
             var properObj = eventObj.srcElement;
+            console.log("Entering image show");
 
             // Super fucking hack           
             // Go up until we get the correct tag

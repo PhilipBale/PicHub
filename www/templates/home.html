@@ -19,20 +19,23 @@
                             <span style="margin-top: 222px">{{item.comments}}</span>
                         </div>
                         <div class="col vote-buttons">
-                            <a ng-click="vote(item.id, true)" class="button button-icon icon ion-ios7-arrow-up"></a>&nbsp;<a ng-click="vote(item.id, false)" class="button button-icon icon ion-ios7-arrow-down" "></a></div>
-					</div>
-				</ion-item>
-			</ion-list>
-		</ion-content>
-	</div>
-	<div id="pic-display " class="image-display transparent " ng-click="closeImage() " style="display: none ">
-		<ion-pane class="transparent " style="background-color: black "> <img id="ourImg " testcache src = "{{imgSrc}} " class="fullscreen-image " />
-			<p class="countdown-timer ">{{countdownTime}} </p>
-		</ion-pane>
-	</div>
-	</div>
-	<ion-footer-bar align-title="center " class="bar-royal " id="footer ">
-		<h1 class="title ">Score: 162</h1>
-		<a class="button button-icon icon ion-ios7-camera " ng-click="capturePhoto() " /> </ion-footer-bar>
+                            <a ng-click="vote(item.id, true)" class="button button-icon icon ion-ios7-arrow-up"></a>&nbsp;
+                            <a ng-click="vote(item.id, false)" class="button button-icon icon ion-ios7-arrow-down"></a>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </div>
+    <div id="pic-display" class="image-display transparent " ng-click="closeImage() " style="display: none ">
+        <ion-pane class="transparent " style="background-color: black ">
+            <img id="ourImg " testcache src="{{imgSrc}} " class="fullscreen-image " />
+            <p class="countdown-timer ">{{countdownTime}}</p>
+        </ion-pane>
+    </div>
+    <ion-footer-bar align-title="center " class="bar-royal " id="footer ">
+        <h1 class="title ">Score: 162</h1>
+        <a class="button button-icon icon ion-ios7-camera " ng-click="capturePhoto() " />
+    </ion-footer-bar>
 </ion-view>
 <!--  href="#/app/img-capture " -->
