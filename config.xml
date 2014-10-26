@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+<widget id="com.logikcomputing.pichub" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>PicHub</name>
     <description>
-        An Ionic Framework and Cordova project.
+        PicHub--Anonymous social photography.
     </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-        Ionic Framework Team
+    <author email="support@logikcomputing.com" href="http://logikcomputing.com.com/">
+        The Logik Computing team.
     </author>
     <content src="index.html" />
     <access origin="*" />

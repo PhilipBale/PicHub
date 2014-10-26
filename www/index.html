@@ -4,14 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>Anonymous Social Photography | PicHub</title>
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="app.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -25,11 +21,18 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/pretty.js"></script>
     <script src="js/imgcache.js"></script>
+    
+    <script src="services/comments.js"></script>
+    <script src="services/photos.js"></script>
+    <script src="services/uploadPhoto.js"></script>
+    <script src="services/user.js"></script>
+    
+    <!-- Todo: pull down locally so there's some sort of offline functionality. -->
     <script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
 
 </head>
 
-<body ng-app="starter">
+<body ng-app="pichub">
     <ion-nav-view></ion-nav-view>
     <script>
     </script>
