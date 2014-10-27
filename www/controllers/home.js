@@ -33,7 +33,7 @@ angular.module('pichub.controllers', [])
         };
     })
 
-.controller('HomeCtrl', function($scope, $ionicModal, $timeout, $http, $ionicNavBarDelegate, $document) {
+.controller('HomeCtrl', function($scope, $ionicModal, $timeout, $http, $ionicNavBarDelegate, $document, User) {
 
         $scope.countdownTime = 0;
         $scope.onTimeout = function() {
@@ -172,7 +172,7 @@ angular.module('pichub.controllers', [])
             params.fullPath = data;
             params.name = options.fileName;
             params.imageName = params.name;
-            params.userId = 2;
+            params.userId = User.getCurrentUser().id;
             params.caption = "test " + params.name;
             params.timeLimit = Math.floor((Math.random() * 10) + 1);
 
@@ -181,6 +181,8 @@ angular.module('pichub.controllers', [])
             var ft = new FileTransfer();
             ft.upload(data, "http://www.lc11.net/upload.php", win, fail, options);
         }
+        
+        console.log("Current user Id: " + User.id());
 
         function win(r) {
             alert("Image succesfully posted");

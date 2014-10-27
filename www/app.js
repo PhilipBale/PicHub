@@ -1,6 +1,6 @@
 // PicHub App
 
-angular.module('pichub', ['ionic', 'pichub.controllers'])
+angular.module('pichub', ['ionic', 'pichub.controllers', 'pichub.services'])
 
 .run(function($ionicPlatform, $rootScope) {
     $ionicPlatform.ready(function() {
