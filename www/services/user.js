@@ -1,4 +1,4 @@
-var module = angular.module('pichub.services', []);
+var module = angular.module('pichub.services', []); // Creating module here
  
 module.factory('User', function () {
 	
