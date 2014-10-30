@@ -32,7 +32,7 @@ module.factory('PhotoUpload', function(User) {
 		options.chunkedMode = false;
 		options.headers = {
 			Connection : "close"
-		}
+		};
 
 		var params = new Object();
 		params.fullPath = data;

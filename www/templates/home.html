@@ -5,6 +5,7 @@
         </ion-nav-buttons>
         <ion-nav-buttons side="right">
             <button ng-click="updateItems()" class="button button-icon icon ion-ios7-refresh" style="color: #8a6de9"></button>
+            <button ng-click="debug()" class="button button-icon icon ion-ios7-refresh" style="color: #8a6de9"></button>
         </ion-nav-buttons>
         <ion-content class="has-header">
             <ion-list class="main-list">
@@ -13,14 +14,18 @@
                     <span style="float: right" class="vote-value">{{item.yes_votes - item.no_votes}}</span>
                     <h2>{{item.id}} - {{item.caption}}</h2>
                     <div class="row">
-                        <div class="col">{{item.upload_date}}&nbsp;&nbsp;&nbsp;</div>
-                        <div class="col views"> <i class="icon ion-ios7-eye"></i> {{item.view_count}}</div>
-                        <div class="col comments"> <i class="icon ion-ios7-chatbubble-outline"></i> 
+                        <div class="col">
+                            {{item.upload_date}}&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="col views">
+                            <i class="icon ion-ios7-eye"></i> {{item.view_count}}
+                        </div>
+                        <div class="col comments">
+                            <i class="icon ion-ios7-chatbubble-outline"></i>
                             <span style="margin-top: 222px">{{item.comments}}</span>
                         </div>
                         <div class="col vote-buttons">
-                            <a ng-click="vote(item.id, true)" class="button button-icon icon ion-ios7-arrow-up"></a>&nbsp;
-                            <a ng-click="vote(item.id, false)" class="button button-icon icon ion-ios7-arrow-down"></a>
+                            <a ng-click="vote(item.id, true)" class="button button-icon icon ion-ios7-arrow-up"></a>&nbsp; <a ng-click="vote(item.id, false)" class="button button-icon icon ion-ios7-arrow-down"></a>
                         </div>
                     </div>
                 </ion-item>
@@ -30,7 +35,9 @@
     <div id="pic-display" class="image-display transparent " ng-click="closeImage() " style="display: none ">
         <ion-pane class="transparent " style="background-color: black ">
             <img id="ourImg " testcache src="{{imgSrc}} " class="fullscreen-image " />
-            <p class="countdown-timer ">{{countdownTime}}</p>
+            <p class="countdown-timer ">
+                {{countdownTime}}
+            </p>
         </ion-pane>
     </div>
     <ion-footer-bar align-title="center " class="bar-royal " id="footer ">

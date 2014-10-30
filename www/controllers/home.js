@@ -33,7 +33,7 @@ angular.module('pichub.controllers', [])
         };
     })
 
-.controller('HomeCtrl', function($scope, $ionicModal, $timeout, $http, $ionicNavBarDelegate, $document, User, PhotoUpload) {
+.controller('HomeCtrl', function($scope, $ionicModal, $timeout, $http, $ionicNavBarDelegate, $document, User, Photos, PhotoUpload) {
 
         $scope.countdownTime = 0;
         $scope.onTimeout = function() {
@@ -43,25 +43,31 @@ angular.module('pichub.controllers', [])
             } else {
                 $scope.closeImageDisplay();
             }
-        }
+        };
+        
         var mytimeout = 0;
-
-        $scope.updateItems = function() {
-            $http.jsonp('http://www.lc11.net/getData.php?callback=JSON_CALLBACK').success(function(data) {
-                $scope.items = data;
-                formatTimeDifference();
-            });
-        }
+/*
+        $scope.$watch(Photos.getPhotos, function(newData, oldData, scope) {
+        	console.log("Watch triggered");
+		    if(newData && newData !== oldData) return;
+		    $scope.items = newData;
+		});*/
+        
+        // Super fucking important, DON'T TOUCH
         $scope.$on('ImgCacheReady', function() {
-            console.log("Updating items list");
-            $scope.updateItems();
+            console.log("Initializing photo list");
+            $scope.items = Photos.updateItems();
         });
 
-        function formatTimeDifference() {
-            for (var i in $scope.items) {
-                $scope.items[i].upload_date = prettyDate($scope.items[i].upload_date);
-            }
-        }
+		$scope.updateItems = function() {
+        	Photos.updateItems();
+        };
+        
+        $scope.debug = function() {
+        	console.log ("Getting photos");
+        	//$scope.items = Photos.getPhotos();
+        };
+		 
 
         // Triggered in the login modal to close it
         $scope.closeImageDisplay = function() {
@@ -83,17 +89,9 @@ angular.module('pichub.controllers', [])
         };
 
         $scope.vote = function(id, yesVote) {
-            $http.get('http://www.lc11.net/vote.php?direction=' + (yesVote ? 1 : 0) + '&id=' + id).finally(function() {
-                for (var i in $scope.items) {
-                    if ($scope.items[i].id == id) {
-                        if (yesVote) {
-                            $scope.items[i].yes_votes++;
-                        } else {
-                            $scope.items[i].no_votes++;
-                        }
-                    }
-                }
-            });
+        	if (Photos.voteForPhoto(id, yesVote)) {
+        		$scope.$apply();
+        	}
         };
 
         $scope.showImage = function(curImg, eventObj) {
@@ -137,7 +135,7 @@ angular.module('pichub.controllers', [])
 
         $scope.capturePhoto = function() {
         	PhotoUpload.takePhoto();
-        }
+        };
         
     }).directive('imageonload', function() {
         return {
