@@ -30,7 +30,6 @@ module.factory('Photos', function(User, $http) {
         $http.get('http://www.lc11.net/vote.php?direction=' + (yesVote ? 1 : 0) + '&id=' + id).finally(function() {
             for (var i in photoCache) {
                 if (photoCache[i].id == id) {
-                	console.log("Well fuck...");
                     if (yesVote) {
                         photoCache[i].yes_votes++;
                     } else {

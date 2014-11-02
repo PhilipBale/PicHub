@@ -3,7 +3,7 @@ var module = angular.module('pichub.services'); // Using same module
 module.factory('PhotoUpload', function(User) {
 	
 	
-	function capturePhoto() {
+	function capturePhoto($scope) {
 		if (navigator.camera != null) {
 			navigator.camera.getPicture(uploadPhoto, onFailedPhoto, {
 				sourceType : 1,
@@ -20,7 +20,7 @@ module.factory('PhotoUpload', function(User) {
 	}
 	
 	function uploadPhoto(data) {
-		$scope.cameraSrc = "data:image/jpeg;base64," + data;
+		//$scope.cameraSrc = "data:image/jpeg;base64," + data;
 
 		/*$.post( "upload.php", {data: imageData}, function(data) {
 		 alert("Image uploaded!");
