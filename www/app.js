@@ -25,6 +25,7 @@ angular.module('pichub', ['ionic', 'pichub.controllers', 'pichub.services']).run
 
 	});
 }).config(function($stateProvider, $urlRouterProvider, $compileProvider) {
+	console.log("In state provider");
 	$compileProvider.imgSrcSanitizationWhitelist('filesystem');
 	$compileProvider.imgSrcSanitizationWhitelist('file');
 	/*
@@ -60,7 +61,16 @@ angular.module('pichub', ['ionic', 'pichub.controllers', 'pichub.services']).run
 				controller : 'ImgCaptCtrl'
 			}
 		}
+	}).state('app.imgView', {
+		url : "/image-view",
+		views : {
+			'menuContent' : {
+				templateUrl : "views/image-view.html",
+				controller : 'ImgViewCtrl'
+			}
+		}
 	});
+	console.log("No matches, falling through");
 	// if none of the above states are matched, use this as the fallback
 	$urlRouterProvider.otherwise('/app/home');
 });

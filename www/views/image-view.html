@@ -1,5 +1,13 @@
-<div class="modal image-modal transparent" ng-click="closeModalImage()">
-	<ion-pane class="transparent" style="background-color: black"> <img id="ourImg" testcache class="fullscreen-image" />
-		<p class="countdown-timer">{{countdownTime}} </p>
-	</ion-pane>
-</div>
+<ion-view title="Image View">
+    <ion-content class="has-header padding">
+        <h1>Image View</h1>
+        <form ng-submit="simulatePost(caption)">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" name="caption" placeholder="Caption" ng-model="caption">
+                </label>
+                <button type="submit" class="button button-small button-positive" value="Submit">Submit</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

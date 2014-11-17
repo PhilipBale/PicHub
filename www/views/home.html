@@ -9,8 +9,10 @@
         </ion-nav-buttons>
         <ion-content class="has-header">
             <ion-list class="main-list">
-                <ion-item ng-repeat="item in items" on-hold="showImage(item, $event)" on-release="closeImageDisplay()" class="item-avatar item-home">
+                <!--on-hold="showImage(item, $event)" on-release="closeImageDisplay()"-->
+                <ion-item ng-repeat="item in items" class="item-avatar item-home">
                     <img testcache id="homeItemIcon" src="" tsrc="{{item.image_name}}" imageonload class="img-blur" />
+                    <a href="#app/imgView/{{item.id}}">test</a>
                     <span style="float: right" class="vote-value">{{item.yes_votes - item.no_votes}}</span>
                     <h2>{{item.id}} - {{item.caption}}</h2>
                     <div class="row">
