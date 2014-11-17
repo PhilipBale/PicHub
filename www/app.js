@@ -35,13 +35,13 @@ angular.module('pichub', ['ionic', 'pichub.controllers', 'pichub.services']).run
 	$stateProvider.state('app', {
 		url : "/app",
 		abstract : true,
-		templateUrl : "templates/menu.html",
+		templateUrl : "views/menu.html",
 		controller : 'AppCtrl'
 	}).state('app.home', {
 		url : "/home",
 		views : {
 			'menuContent' : {
-				templateUrl : "templates/home.html",
+				templateUrl : "views/home.html",
 				controller : 'HomeCtrl'
 			}
 		}
@@ -49,14 +49,14 @@ angular.module('pichub', ['ionic', 'pichub.controllers', 'pichub.services']).run
 		url : "/search",
 		views : {
 			'menuContent' : {
-				templateUrl : "templates/search.html"
+				templateUrl : "views/search.html"
 			}
 		}
 	}).state('app.imgCapt', {
 		url : "/img-capture",
 		views : {
 			'menuContent' : {
-				templateUrl : "templates/image-capture.html",
+				templateUrl : "views/image-capture.html",
 				controller : 'ImgCaptCtrl'
 			}
 		}
