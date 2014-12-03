@@ -3,5 +3,13 @@ platforms/android/ant-gen/
 platforms/android/assets/
 platforms/android/CordovaLib/ant-build/
 platforms/android/CordovaLib/ant-gen/
+platforms/ios/ant-build/
+platforms/ios/ant-gen/
+platforms/ios/assets/
+platforms/ios/CordovaLib/ant-build/
+platforms/ios/CordovaLib/ant-gen/
+
+platforms/
+plugins/
 node_modules/
 .project

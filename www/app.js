@@ -27,6 +27,7 @@ angular.module('pichub', ['ionic', 'pichub.controllers', 'pichub.services']).run
 }).config(function($stateProvider, $urlRouterProvider, $compileProvider) {
 	$compileProvider.imgSrcSanitizationWhitelist('filesystem');
 	$compileProvider.imgSrcSanitizationWhitelist('file');
+	$compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 	/*
 	 $compileProvider.imgSrcSanitizationWhitelist('file:');
 	 $compileProvider.imgSrcSanitizationWhitelist('file:/');

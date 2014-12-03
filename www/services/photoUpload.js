@@ -1,30 +1,53 @@
 var module = angular.module('pichub.services'); // Using same module
+module.factory('Camera', ['$q', function($q) {
 
-module.factory('PhotoUpload', function(User) {
+  return {
+    getPicture: function(options) {
+      var q = $q.defer();
+      
+      navigator.camera.getPicture(function(result) {
+        // Do any magic you need
+        q.resolve(result);
+      }, function(err) {
+        q.reject(err);
+      }, options);
+      
+      return q.promise;
+    }
+  }
+}]);
+
+module.factory('PhotoUpload', function(User, Camera) {
 	
 	
 	function capturePhoto($scope) {
 		if (navigator.camera != null) {
-			navigator.camera.getPicture(uploadPhoto, onFailedPhoto, {
+			console.log("Taking a picture.");
+			Camera.getPicture().then(uploadPhoto, onFailedPhoto, {
 				sourceType : 1,
-				quality : 50,
-				encodingType : 0,
+				quality : 75,
 				saveToPhotoAlbum : false,
+				encodingType: 0,
+				destinationType: 1,
 				targetHeight : 960,
 				correctOrientation : true
 			});
 		} else {
+			console.log("Camera not supported? Something went wrong");
 			alert("Camera not supported!");
 		}
 
 	}
 	
 	function uploadPhoto(data) {
+		console.log("Trying to upload photo w/ URI: " + data); 
 		//$scope.cameraSrc = "data:image/jpeg;base64," + data;
 
 		/*$.post( "upload.php", {data: imageData}, function(data) {
 		 alert("Image uploaded!");
 		 }); */
+
+		//iOS uri: file:///var/mobile/Containers/Data/Application/2FBD19D6-8321-45AE-BC19-0F998D5EE91D/tmp/cdv_photo_008.jpg
 		var options = new FileUploadOptions();
 		options.fileKey = "file";
 		options.fileName = data.substr(data.lastIndexOf('/') + 1);
@@ -52,18 +75,21 @@ module.factory('PhotoUpload', function(User) {
 	console.log("Current user Id: " + User.id());
 
 	function win(r) {
-		alert("Image succesfully posted");
+		console.log("Image successfully posted");
+		//alert("Image succesfully posted");
 		/*alert("Code = " + r.responseCode);
 		 alert("Response = " + r.response);
 		 alert("Sent = " + r.bytesSent);*/
 	}
 
 	function fail(error) {
-		alert("An error has occurred: Code = " + error.code);
+		console.log("An error has occurred: Code = " + error.code);
+		//alert("An error has occurred: Code = " + error.code);
 	}
 
 	function onFailedPhoto(data) {
-		alert(data);
+		console.log(data);
+		//alert(data);
 	}
 	
 	return {
