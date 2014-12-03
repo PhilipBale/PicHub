@@ -48,6 +48,7 @@ module.factory('PhotoUpload', function(User, Camera) {
 		 }); */
 
 		//iOS uri: file:///var/mobile/Containers/Data/Application/2FBD19D6-8321-45AE-BC19-0F998D5EE91D/tmp/cdv_photo_008.jpg
+        //Android uri: file:///storage/emulated/0/Android/data/com.logikcomputing.pichub/cache/1417631448726.jpg 
 		var options = new FileUploadOptions();
 		options.fileKey = "file";
 		options.fileName = data.substr(data.lastIndexOf('/') + 1);
